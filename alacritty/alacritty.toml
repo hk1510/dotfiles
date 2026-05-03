@@ -1,0 +1,14 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/moonfly.toml"
+]
+live_config_reload = true
+
+[font]
+normal = { family = "Hack Nerd Font Propo", style = "Regular" }
+size = 16
+
+[window]
+dynamic_padding = true
+padding = { x = 20, y = 20 }
+decorations = "Transparent"
