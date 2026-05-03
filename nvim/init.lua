@@ -249,3 +249,8 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 local treeapi = require("nvim-tree.api")
 vim.keymap.set('n', '<leader>e', treeapi.tree.toggle, { desc = 'Toggle nvim-tree' })
 
+-- Python shenanigans
+local python_path = vim.fn.system("which python"):gsub("\n", "")
+if vim.v.shell_error == 0 then
+    vim.g.python3_host_prog = python_path
+end
