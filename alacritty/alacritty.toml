@@ -10,5 +10,3 @@ size = 16
 
 [window]
 dynamic_padding = true
-padding = { x = 20, y = 20 }
-decorations = "Transparent"
