@@ -46,8 +46,8 @@ vim.opt.updatetime = 50
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- Lualine already shows mode
-vim.opt.showmode = false
+-- Remove command line because we are using lualine
+vim.opt.cmdheight = 0
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
