@@ -227,17 +227,32 @@ require("lazy").setup({
 			},
 		},
 		{
+			"nvim-mini/mini.indentscope",
+			opts = {
+				draw = {
+					delay = 0,
+					animation = function() return 0 end,
+				},
+			},
+		},
+		{
 			"lukas-reineke/indent-blankline.nvim",
 			main = "ibl",
 			---@module "ibl"
 			---@type ibl.config
 			config = function()
+				local hooks = require("ibl.hooks")
+				hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+					vim.api.nvim_set_hl(0, "IblIndent", { fg = "#3a3a3a" })
+				end)
 				require("ibl").setup({
-					indent = { char = "▏" },
+					indent = { char = "│", highlight = "IblIndent" },
 					whitespace = {
 						remove_blankline_trail = false, -- Ensures guides show on blank lines
 					},
-					scope = { enabled = false },
+					scope = {
+						enabled = false,
+					},
 				})
 			end,
 		},
