@@ -24,6 +24,7 @@ vim.opt.softtabstop = 4
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.swapfile = false
@@ -231,7 +232,9 @@ require("lazy").setup({
 			opts = {
 				draw = {
 					delay = 0,
-					animation = function() return 0 end,
+					animation = function()
+						return 0
+					end,
 				},
 			},
 		},
